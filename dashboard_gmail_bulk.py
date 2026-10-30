@@ -10,7 +10,7 @@ from google_auth_oauthlib.flow import Flow
 from agent import AICustomerSegmentationAgent
 
 GMAIL_SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
-GMAIL_REDIRECT_URI = "https://gmail-send-ifeugtcme9zyjg7ryyx7n.streamlit.app/"
+GMAIL_REDIRECT_URI = "https://gmail-send-ifeugtcmc9zyjyg7ryxy7n.streamlit.app/"
 
 
 def get_oauth_client_config():
@@ -108,7 +108,7 @@ def render_gmail_connection():
         authorization_url, state = flow.authorization_url(
             access_type="offline",
             include_granted_scopes="true",
-            prompt="consent",
+            prompt="select_account consent",
         )
         st.session_state["gmail_oauth_state"] = state
         st.link_button("Continue to Google sign-in", authorization_url)
