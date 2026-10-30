@@ -25,7 +25,7 @@ def get_oauth_client_config():
                 "token_uri": "https://oauth2.googleapis.com/token",
                 "redirect_uris": [GMAIL_REDIRECT_URI = "https://gmail-send-ifeugtcmc9zyjyg7ryxy7n.streamlit.app/"],
             }
-        }
+
     except Exception as exc:
         raise RuntimeError(
             "Google OAuth Secrets are not configured. Add the [google_oauth] "
