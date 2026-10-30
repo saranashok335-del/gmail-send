@@ -17,14 +17,15 @@ def get_oauth_client_config():
     """Read the Web OAuth client from Streamlit Cloud Secrets."""
     try:
         oauth = st.secrets["google_oauth"]
-        return {
-            "web": {
-                "client_id": oauth["client_id"],
-                "client_secret": oauth["client_secret"],
-                "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-                "token_uri": "https://oauth2.googleapis.com/token",
-              "redirect_uris": [GMAIL_REDIRECT_URI = "https://gmail-send-ifeugtcmc9zyjyg7ryxy7n.streamlit.app/"], }
-    except Exception as exc:
+     return {
+    "web": {
+        "client_id": oauth["client_id"],
+        "client_secret": oauth["client_secret"],
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "redirect_uris": [GMAIL_REDIRECT_URI],
+    }
+}
         raise RuntimeError(
             "Google OAuth Secrets are not configured. Add the [google_oauth] "
             "section in Streamlit app Settings → Secrets."
